@@ -32,6 +32,14 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            pickFirsts += "META-INF/LICENSE.md"
+            pickFirsts += "META-INF/LICENSE-notice.md"
+        }
+    }
 }
 
 dependencies {
@@ -53,7 +61,15 @@ dependencies {
     
     // Glide for image loading
     implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
     
     // Material Design components
     implementation("com.google.android.material:material:1.11.0")
+    
+    // Sliding Panel
+    implementation("com.sothree.slidinguppanel:library:3.4.0")
+    
+    // Animation libraries
+    implementation("com.airbnb.android:lottie:6.1.0")
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
 }

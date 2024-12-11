@@ -12,4 +12,6 @@
     <string name="menu_ice_cream">Ice Cream</string>
     <string name="menu_cart">Cart</string>
     <string name="menu_rewards">Rewards</string>
+    <string name="menu_order">Order</string>
+    <string name="menu_deals">Deals</string>
 </resources>

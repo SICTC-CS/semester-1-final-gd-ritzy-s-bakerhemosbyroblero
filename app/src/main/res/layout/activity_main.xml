@@ -1,25 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
+    android:id="@+id/sliding_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:gravity="bottom"
+    app:umanoPanelHeight="68dp"
+    app:umanoShadowHeight="4dp">
 
-    <include
-        android:id="@+id/app_bar_main"
-        layout="@layout/app_bar_main"
+    <!-- Main Content -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
-</androidx.drawerlayout.widget.DrawerLayout>
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.GDRitzys.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/Theme.GDRitzys.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:navGraph="@navigation/mobile_navigation" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            app:menu="@menu/bottom_nav_menu" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!-- Sliding Panel -->
+    <include
+        android:id="@+id/cart_panel"
+        layout="@layout/layout_cart_panel" />
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

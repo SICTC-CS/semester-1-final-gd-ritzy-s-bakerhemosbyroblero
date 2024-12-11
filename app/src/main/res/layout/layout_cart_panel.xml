@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- Handle/Header -->
+    <LinearLayout
+        android:id="@+id/cart_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ritzys_green"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Your Order"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cart_item_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Cart Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Cart Items -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cart_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Subtotal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Subtotal"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/subtotal_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Tax -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tax"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tax_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Total -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/total_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Rewards Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/rewards_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rewards Available"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/apply_reward_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Apply $5 Reward (100 points)"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Checkout Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/checkout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        android:text="Checkout"
+        android:textSize="16sp"
+        app:cornerRadius="8dp" />
+</LinearLayout> 
