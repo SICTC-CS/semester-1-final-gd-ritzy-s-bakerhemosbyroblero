@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="176dp"
+<<<<<<< HEAD
     android:background="@color/ritzys_green"
+=======
+    android:background="@drawable/main_gradient"
+>>>>>>> origin/master
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
@@ -12,10 +16,17 @@
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
+<<<<<<< HEAD
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="8dp"
         app:srcCompat="@mipmap/ic_launcher_round"
         android:background="@drawable/circular_image_background"/>
+=======
+        android:background="@drawable/logo"
+        android:contentDescription="@string/nav_header_desc"
+        android:paddingTop="8dp"
+         />
+>>>>>>> origin/master
 
     <TextView
         android:layout_width="match_parent"
