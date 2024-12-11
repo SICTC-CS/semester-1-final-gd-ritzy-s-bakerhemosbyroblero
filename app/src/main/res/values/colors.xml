@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ritzys_green">#4CAF50</color>
+    <color name="ritzys_green_dark">#005432</color>
+    <color name="ritzys_green_light">#008B52</color>
+    <color name="ritzys_red">#FF0000</color>
+    <color name="ritzys_red_dark">#C41430</color>
+    <color name="ritzys_red_light">#FF1F41</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="medium_gray">#666666</color>
+    
+    <!-- Keep these for backward compatibility -->
+    <color name="purple_200">@color/ritzys_green_light</color>
+    <color name="purple_500">@color/ritzys_green</color>
+    <color name="purple_700">@color/ritzys_green_dark</color>
+    <color name="teal_200">@color/ritzys_red</color>
+    <color name="teal_700">@color/ritzys_red_dark</color>
+</resources>
