@@ -6,14 +6,25 @@ import androidx.lifecycle.ViewModel;
 
 public class HomeViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<String> updates;
+    private final MutableLiveData<Integer> points;
 
     public HomeViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        updates = new MutableLiveData<>();
+        points = new MutableLiveData<>();
+        
+        // Initialize with some example data
+        updates.setValue("🎉 New Summer Flavors are here!\n\n" +
+                "🍔 Try our new Double Ritz Combo\n\n" +
+                "🏆 Earn double points this weekend!");
+        points.setValue(30); // Example points value
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<String> getUpdates() {
+        return updates;
+    }
+
+    public LiveData<Integer> getPoints() {
+        return points;
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ritzys_green">#006B3F</color>
+    <color name="ritzys_green">#4CAF50</color>
     <color name="ritzys_green_dark">#005432</color>
     <color name="ritzys_green_light">#008B52</color>
-    <color name="ritzys_red">#E31837</color>
+    <color name="ritzys_red">#FF0000</color>
     <color name="ritzys_red_dark">#C41430</color>
     <color name="ritzys_red_light">#FF1F41</color>
     <color name="white">#FFFFFF</color>

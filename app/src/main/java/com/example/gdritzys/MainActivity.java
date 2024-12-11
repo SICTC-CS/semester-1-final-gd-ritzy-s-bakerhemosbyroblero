@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+        
         // Define top level destinations
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_food, R.id.nav_ice_cream, R.id.nav_cart, R.id.nav_rewards)
@@ -47,7 +48,14 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+        
+        // Replace automatic setup with manual navigation handling
+        navigationView.setNavigationItemSelectedListener(item -> {
+            drawer.closeDrawers();
+            navController.popBackStack(navController.getGraph().getStartDestination(), false);
+            navController.navigate(item.getItemId());
+            return true;
+        });
     }
 
     @Override
