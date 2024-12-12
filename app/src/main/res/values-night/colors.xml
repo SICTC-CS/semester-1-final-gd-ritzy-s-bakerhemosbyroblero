@@ -17,6 +17,6 @@
 
     <!-- Category colors for dark theme -->
     <color name="category_unselected">#121212</color>
-    <color name="category_text_unselected">@color/white</color>
-    <color name="price_color">@color/primary</color>
+    <color name="category_text_unselected">@color/accent</color>
+    <color name="price_color">@color/accent</color>
 </resources> 

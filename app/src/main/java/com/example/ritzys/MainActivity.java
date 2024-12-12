@@ -1,15 +1,12 @@
 package com.example.ritzys;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
 import android.os.Bundle;
-import android.view.MenuItem;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import com.example.ritzys.fragments.MenuFragment;
+import com.example.ritzys.fragments.OrderFragment;
+import com.example.ritzys.fragments.RewardsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.gdritzys.fragments.HomeFragment;
-import com.gdritzys.fragments.MenuFragment;
-import com.gdritzys.fragments.RewardsFragment;
-import com.gdritzys.fragments.OrderFragment;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
@@ -19,41 +16,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set up toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false); // Hide default title
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        
+        // Set default fragment
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new MenuFragment())
+                    .commit();
+        }
 
         // Set up bottom navigation
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+        bottomNavigationView.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
             int itemId = item.getItemId();
 
-            if (itemId == R.id.nav_home) {
-                selectedFragment = new HomeFragment();
-            } else if (itemId == R.id.nav_menu) {
+            if (itemId == R.id.navigation_menu) {
                 selectedFragment = new MenuFragment();
-            } else if (itemId == R.id.nav_rewards) {
-                selectedFragment = new RewardsFragment();
-            } else if (itemId == R.id.nav_order) {
+            } else if (itemId == R.id.navigation_order) {
                 selectedFragment = new OrderFragment();
+            } else if (itemId == R.id.navigation_rewards) {
+                selectedFragment = new RewardsFragment();
             }
 
             if (selectedFragment != null) {
                 getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, selectedFragment)
-                    .commit();
+                        .replace(R.id.fragment_container, selectedFragment)
+                        .commit();
+                return true;
             }
-            return true;
+            return false;
         });
-
-        // Show HomeFragment by default
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, new HomeFragment())
-                .commit();
-            bottomNavigationView.setSelectedItemId(R.id.nav_home);
-        }
     }
 }
