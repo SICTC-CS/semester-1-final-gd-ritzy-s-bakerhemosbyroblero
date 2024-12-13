@@ -11,7 +11,7 @@ import com.example.ritzys.adapters.PromotionsAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment { //We didn't use this and don't wanna remove it in case of the code breaking
     private ViewPager2 promotionsViewPager;
     private PromotionsAdapter promotionsAdapter;
 
@@ -25,7 +25,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    private void setupPromotions() {
+    private void setupPromotions() {// setting up promotion strings
         List<String> promotions = new ArrayList<>();
         promotions.add("Try our World Famous Shoestring Fries!");
         promotions.add("New! World's Best PB&J Sandwich");

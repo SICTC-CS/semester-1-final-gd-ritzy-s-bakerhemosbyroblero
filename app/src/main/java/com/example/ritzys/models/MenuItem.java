@@ -6,7 +6,7 @@ public class MenuItem {
     private double price;
     private String category;
 
-    public MenuItem(String name, String description, double price, String category) {
+    public MenuItem(String name, String description, double price, String category) { //setting up getters and setters for menu items
         this.name = name;
         this.description = description;
         this.price = price;

@@ -29,7 +29,7 @@ public class MenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public int getItemViewType(int position) {
+    public int getItemViewType(int position) { //logic for displaying the items on menu based on dropdown option picked
         int itemCount = 0;
         for (MenuCategory category : categories) {
             if (position == itemCount) {
@@ -61,7 +61,7 @@ public class MenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {//for binding multiple Menu catagories, without mutiple functions
         if (holder instanceof CategoryViewHolder) {
             MenuCategory category = getCategoryForPosition(position);
             ((CategoryViewHolder) holder).bind(category);
@@ -83,7 +83,7 @@ public class MenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return itemCount;
     }
 
-    private MenuCategory getCategoryForPosition(int position) {
+    private MenuCategory getCategoryForPosition(int position) { //for getting where the catogory is in terms of position
         int itemCount = 0;
         for (MenuCategory category : categories) {
             if (position == itemCount) {
@@ -97,7 +97,7 @@ public class MenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return null;
     }
 
-    private MenuItem getItemForPosition(int position) {
+    private MenuItem getItemForPosition(int position) {//for getting where the item is in terms of position
         int itemCount = 0;
         for (MenuCategory category : categories) {
             itemCount++; // Skip category header
@@ -116,7 +116,7 @@ public class MenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         TextView titleText;
         ImageView expandIcon;
 
-        CategoryViewHolder(@NonNull View itemView) {
+        CategoryViewHolder(@NonNull View itemView) { // for showing icons and showing items based on drop down
             super(itemView);
             titleText = itemView.findViewById(R.id.category_title);
             expandIcon = itemView.findViewById(R.id.expand_icon);
@@ -138,12 +138,15 @@ public class MenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     static class MenuViewHolder extends RecyclerView.ViewHolder {
+        //declaring textviews
         TextView nameText;
         TextView descriptionText;
         TextView priceText;
 
+
         MenuViewHolder(@NonNull View itemView) {
             super(itemView);
+            //assigning text to its id
             nameText = itemView.findViewById(R.id.item_name);
             descriptionText = itemView.findViewById(R.id.item_description);
             priceText = itemView.findViewById(R.id.item_price);

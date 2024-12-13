@@ -7,7 +7,7 @@ public class MenuCategory {
     private List<MenuItem> items;
     private boolean isExpanded;
 
-    public MenuCategory(String title, List<MenuItem> items) {
+    public MenuCategory(String title, List<MenuItem> items) { //setting up getters and setters for menu catagory
         this.title = title;
         this.items = items;
         this.isExpanded = false;

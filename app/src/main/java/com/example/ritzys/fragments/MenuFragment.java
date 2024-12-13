@@ -41,14 +41,14 @@ public class MenuFragment extends Fragment {
         List<MenuItem> drinks = new ArrayList<>();
         List<MenuItem> kids = new ArrayList<>();
 
-        // Combos
+        // Combos with a description, price, and catagory
         combos.add(new MenuItem("COMBO #1", "Cheeseburger, Fries and a Medium Drink", 8.99, "combos"));
         combos.add(new MenuItem("COMBO #2", "Grilled Chicken Sandwich, Fries and a Medium Drink", 9.99, "combos"));
         combos.add(new MenuItem("COMBO #3", "Double Ritz w/ Cheese, Fries and a Medium Drink", 10.99, "combos"));
         combos.add(new MenuItem("COMBO #4", "Fish Sandwich, Fries and a Medium Drink", 9.99, "combos"));
         combos.add(new MenuItem("COMBO #5", "World's Best PB&J, Fries and a Medium Drink", 9.99, "combos"));
 
-        // Sandwiches
+        // Sandwiches with a description, price, and catagory
         sandwiches.add(new MenuItem("Hamburger", "Fresh lean ground beef seared to perfection", 4.99, "sandwiches"));
         sandwiches.add(new MenuItem("Cheeseburger", "Our classic hamburger topped with American cheese", 5.49, "sandwiches"));
         sandwiches.add(new MenuItem("Double Ritz", "Two beef patties with cheese", 7.49, "sandwiches"));
@@ -57,25 +57,25 @@ public class MenuFragment extends Fragment {
         sandwiches.add(new MenuItem("Grilled Chicken", "Marinated chicken breast with lettuce and mayo", 6.99, "sandwiches"));
         sandwiches.add(new MenuItem("World's Best PB&J", "Two giant pieces of thick bread, creamy peanut butter, strawberry jelly, peanuts and fresh strawberries", 6.99, "sandwiches"));
 
-        // Sides
+        // Sides with a description, price, and catagory
         sides.add(new MenuItem("World Famous Shoestring Fries", "Crispy thin-cut fries", 2.99, "sides"));
         sides.add(new MenuItem("Large Fries", "Bigger portion of our famous fries", 3.99, "sides"));
         sides.add(new MenuItem("Onion Rings", "Crispy breaded onion rings", 3.99, "sides"));
         sides.add(new MenuItem("Side Salad", "Fresh garden salad with choice of dressing", 3.49, "sides"));
 
-        // Shakes
+        // Shakes with a description, price, and catagory
         shakes.add(new MenuItem("Vanilla Shake", "Rich and creamy vanilla shake", 4.99, "shakes"));
         shakes.add(new MenuItem("Chocolate Shake", "Rich and creamy chocolate shake", 4.99, "shakes"));
         shakes.add(new MenuItem("Strawberry Shake", "Rich and creamy strawberry shake", 4.99, "shakes"));
         shakes.add(new MenuItem("Oreo Shake", "Vanilla shake blended with Oreo cookies", 5.49, "shakes"));
         shakes.add(new MenuItem("Banana Shake", "Rich and creamy banana shake", 4.99, "shakes"));
 
-        // Desserts
+        // Desserts with a description, price, and catagory
         desserts.add(new MenuItem("Hot Fudge Sundae", "Vanilla ice cream topped with hot fudge", 4.49, "desserts"));
         desserts.add(new MenuItem("Strawberry Sundae", "Vanilla ice cream topped with strawberry sauce", 4.49, "desserts"));
         desserts.add(new MenuItem("Caramel Sundae", "Vanilla ice cream topped with caramel sauce", 4.49, "desserts"));
 
-        // Drinks
+        // Drinks with a description, price, and catagory
         drinks.add(new MenuItem("Fountain Drink Small", "16oz fountain drink", 1.99, "drinks"));
         drinks.add(new MenuItem("Fountain Drink Medium", "20oz fountain drink", 2.29, "drinks"));
         drinks.add(new MenuItem("Fountain Drink Large", "32oz fountain drink", 2.69, "drinks"));
@@ -83,7 +83,7 @@ public class MenuFragment extends Fragment {
         drinks.add(new MenuItem("Coffee", "Fresh brewed coffee", 1.99, "drinks"));
         drinks.add(new MenuItem("Bottled Water", "16.9oz bottled water", 1.99, "drinks"));
 
-        // Kids Meals
+        // Kids Meals with a description, price, and catagory
         kids.add(new MenuItem("Kids Hamburger Meal", "Kid-sized hamburger, small fries, small drink", 5.99, "kids"));
         kids.add(new MenuItem("Kids Cheeseburger Meal", "Kid-sized cheeseburger, small fries, small drink", 6.49, "kids"));
         kids.add(new MenuItem("Kids PB&J Meal", "Kid-sized PB&J sandwich, small fries, small drink", 5.99, "kids"));

@@ -6,7 +6,8 @@ public class CartItem {
     private String customizations;
     private double itemPrice;
 
-    public CartItem(MenuItem menuItem, int quantity, String customizations, double itemPrice) {
+
+    public CartItem(MenuItem menuItem, int quantity, String customizations, double itemPrice) { //setting up getters and setters for cart calculation
         this.menuItem = menuItem;
         this.quantity = quantity;
         this.customizations = customizations;

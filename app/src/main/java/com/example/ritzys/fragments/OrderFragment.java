@@ -42,7 +42,7 @@ public class OrderFragment extends Fragment {
         return view;
     }
 
-    private void setupViews(View view) {
+    private void setupViews(View view) {//setting up the views
         cartRecyclerView = view.findViewById(R.id.cart_recycler_view);
         subtotalText = view.findViewById(R.id.subtotal_text);
         taxText = view.findViewById(R.id.tax_text);

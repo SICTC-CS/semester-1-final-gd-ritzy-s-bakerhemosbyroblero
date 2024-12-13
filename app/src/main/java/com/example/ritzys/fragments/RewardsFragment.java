@@ -16,7 +16,7 @@ public class RewardsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_rewards, container, false);
-        
+        //assigning the variables for the point amount text and updating points based on it
         pointsValueText = view.findViewById(R.id.points_value);
         rewardsManager = RewardsManager.getInstance(requireContext());
         updatePoints();
@@ -24,7 +24,7 @@ public class RewardsFragment extends Fragment {
         return view;
     }
 
-    private void updatePoints() {
+    private void updatePoints() { //in the name updating points
         int points = rewardsManager.getCurrentPoints();
         pointsValueText.setText(String.valueOf(points));
     }

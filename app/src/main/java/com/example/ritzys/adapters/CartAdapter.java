@@ -34,7 +34,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         CartItem item = cartItems.get(position);
         holder.bind(item);
-        
+        //setting up delelete button listioner, for option to remove item and update total
         holder.deleteButton.setOnClickListener(v -> {
             CartManager.getInstance().removeItem(position);
             notifyItemRemoved(position);
@@ -57,6 +57,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
         CartViewHolder(@NonNull View itemView) {
             super(itemView);
+            //setting up text items
             nameText = itemView.findViewById(R.id.cart_item_name);
             quantityText = itemView.findViewById(R.id.cart_item_quantity);
             priceText = itemView.findViewById(R.id.cart_item_price);
@@ -65,10 +66,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         }
 
         void bind(CartItem item) {
+            //actually setting the text of the items
             nameText.setText(item.getMenuItem().getName());
             quantityText.setText(String.format("Qty: %d", item.getQuantity()));
             priceText.setText(String.format("$%.2f", item.getTotalPrice()));
-            
+
+            //Showing the customization text if it's not empty and not null.
             if (item.getCustomizations() != null && !item.getCustomizations().isEmpty()) {
                 customizationsText.setVisibility(View.VISIBLE);
                 customizationsText.setText(item.getCustomizations());

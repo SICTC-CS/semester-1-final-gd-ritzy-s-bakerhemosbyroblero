@@ -88,31 +88,31 @@ public class CustomizationDialog extends Dialog {
 
     private void setupCustomizationOptions(LinearLayout layout) {
         String category = menuItem.getCategory();
-        
-        if (category.equals("sandwiches")) {
+        //setting the topping options based on catagory
+        if (category.equals("sandwiches")) { //sandwich catagory options
             addCheckboxOption(layout, "No Lettuce", 0);
             addCheckboxOption(layout, "No Tomato", 0);
             addCheckboxOption(layout, "No Onion", 0);
             addCheckboxOption(layout, "No Pickles", 0);
             addCheckboxOption(layout, "No Mayo", 0);
-            addCheckboxOption(layout, "Extra Mayo", 0.25);
+            addCheckboxOption(layout, "Extra Mayo", 0.25); //it's not free because its extra same with the others
             addCheckboxOption(layout, "Extra Cheese", 0.50);
-            if (menuItem.getName().contains("Fish")) {
+            if (menuItem.getName().contains("Fish")) {// fish catagory options
                 addCheckboxOption(layout, "No Tartar Sauce", 0);
                 addCheckboxOption(layout, "Extra Tartar Sauce", 0.25);
             }
-        } else if (category.equals("combos")) {
+        } else if (category.equals("combos")) {// combo catagory options
             addCheckboxOption(layout, "Large Fries", 1.00);
             addCheckboxOption(layout, "Large Drink", 0.40);
             addCheckboxOption(layout, "Onion Rings Instead", 1.00);
-        } else if (category.equals("shakes") || category.equals("desserts")) {
+        } else if (category.equals("shakes") || category.equals("desserts")) { //shakes/deserts catagory options
             addCheckboxOption(layout, "Extra Whipped Cream", 0.25);
             addCheckboxOption(layout, "Add Cherry", 0.25);
-            if (menuItem.getName().contains("Sundae")) {
+            if (menuItem.getName().contains("Sundae")) { //sundaes catagory options
                 addCheckboxOption(layout, "Extra Sauce", 0.50);
                 addCheckboxOption(layout, "Add Nuts", 0.50);
             }
-        } else if (category.equals("kids")) {
+        } else if (category.equals("kids")) { //kids catagory options
             addCheckboxOption(layout, "No Lettuce", 0);
             addCheckboxOption(layout, "No Tomato", 0);
             addCheckboxOption(layout, "No Pickles", 0);
@@ -120,7 +120,7 @@ public class CustomizationDialog extends Dialog {
         }
     }
 
-    private void addCheckboxOption(LinearLayout layout, String text, double price) {
+    private void addCheckboxOption(LinearLayout layout, String text, double price) { //displaying the options
         CheckBox checkBox = new CheckBox(getContext());
         String displayText = price > 0 ? String.format("%s (+$%.2f)", text, price) : text;
         checkBox.setText(displayText);
@@ -139,7 +139,7 @@ public class CustomizationDialog extends Dialog {
         layout.addView(checkBox);
     }
 
-    private void updatePrice(TextView priceText) {
+    private void updatePrice(TextView priceText) { //updating the price of the item
         double total = (menuItem.getPrice() + extrasCost) * quantity;
         priceText.setText(String.format("$%.2f", total));
     }
