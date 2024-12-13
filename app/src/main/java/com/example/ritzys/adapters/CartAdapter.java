@@ -3,18 +3,23 @@ package com.example.ritzys.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.ritzys.R;
 import com.example.ritzys.models.CartItem;
+import com.example.ritzys.models.CartManager;
+import com.example.ritzys.fragments.OrderFragment;
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
     private List<CartItem> cartItems;
+    private OrderFragment orderFragment;
 
-    public CartAdapter(List<CartItem> cartItems) {
+    public CartAdapter(List<CartItem> cartItems, OrderFragment orderFragment) {
         this.cartItems = cartItems;
+        this.orderFragment = orderFragment;
     }
 
     @NonNull
@@ -29,6 +34,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         CartItem item = cartItems.get(position);
         holder.bind(item);
+        
+        holder.deleteButton.setOnClickListener(v -> {
+            CartManager.getInstance().removeItem(position);
+            notifyItemRemoved(position);
+            notifyItemRangeChanged(position, getItemCount());
+            orderFragment.updateTotals();
+        });
     }
 
     @Override
@@ -41,6 +53,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         TextView quantityText;
         TextView priceText;
         TextView customizationsText;
+        ImageButton deleteButton;
 
         CartViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -48,6 +61,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             quantityText = itemView.findViewById(R.id.cart_item_quantity);
             priceText = itemView.findViewById(R.id.cart_item_price);
             customizationsText = itemView.findViewById(R.id.cart_item_customizations);
+            deleteButton = itemView.findViewById(R.id.delete_button);
         }
 
         void bind(CartItem item) {

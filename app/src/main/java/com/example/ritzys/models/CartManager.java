@@ -33,4 +33,14 @@ public class CartManager {
     public List<CartItem> getItems() {
         return items;
     }
+
+    public void clearCart() {
+        items.clear();
+    }
+
+    public void removeItem(int position) {
+        if (position >= 0 && position < items.size()) {
+            items.remove(position);
+        }
+    }
 } 
